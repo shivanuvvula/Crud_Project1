@@ -1,0 +1,15 @@
+<h1>two-way-binding works!</h1>
+
+<input type="text" #CourseName placeholder="course name">
+<br/>
+<br/>
+<button class="btn btn-primaray"(click)="getCourseName(CourseName)">submit</button> 
+<br/>
+<br/>
+user data={{data}}
+<br/>
+<br/>
+
+<input type="text" [(ngModel)]="CourseFee" placeholder="enter fee">
+<br/>
+CourseFee={{CourseFee}}

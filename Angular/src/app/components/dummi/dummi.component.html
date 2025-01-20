@@ -1,0 +1,38 @@
+<h1>Employee list</h1>
+
+<!-- <button mat-button color="primary" (click)="Getproduct()">product</button> -->
+<!-- <h1><button mat-button color="primary" (click)="Getselect()">Select</button></h1> -->
+
+<!-- <div class="table" *ngFor="let produ of tableData" >
+    <h1>{{produ.id}}</h1>
+    <h1>{{produ.name}}</h1>
+    <h1>{{produ.job}}</h1>
+    <h1>{{produ.salary}}</h1>
+</div>  -->
+
+
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">name</th>
+    <th scope="col">job</th>
+    <th scope="col">salary</th>
+    <th scope="col">Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let e of employee">
+    <td>{{e.id}}</td>
+    <td>{{e.name}}</td>
+    <td>{{e.job}}</td>
+    <td>{{e.salary}}</td>
+    <td>
+      <button (click)="UpdateEmployee(e.id)" class="btn btn-info">Update</button>
+      &nbsp;
+      <button (click)="DeleteEployee(e.id)" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+</tbody>
+</table>

@@ -1,0 +1,26 @@
+
+<div class="col-md-5 offset-md-3">
+<h3>Create Employee</h3>
+
+<form (ngSubmit)="onSubmit()">
+    
+    <h5 class="text-center">Insert Employee details</h5>
+    <div class="form-group">
+        <label class="form-label">Id</label>
+        <input type="number" class="form-control" name="id" id="id" [(ngModel)]="employee.id" >
+
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="employee.name" >
+
+        <label>JOB</label>
+        <input type="text" class="form-control" name="job" id="job" [(ngModel)]="employee.job" >
+
+        <label>Salary</label>
+        <input type="number" class="form-control" name="salary" id="salary" [(ngModel)]="employee.salary" >
+       <br>
+       <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button type="submit"  class="btn btn-primary">Submit</button>
+       </div>
+    </div>
+</form>
+</div>

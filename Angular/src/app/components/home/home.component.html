@@ -1,0 +1,76 @@
+<div class="container">
+<h1 class="text-center">Registration form</h1>
+<form  #registrationForm="ngForm" (ngSubmit)="submitdata(registrationForm)">
+  <div class="row">
+
+    <div class="col-6">
+      <div class="mb-3">
+        <!-- <label for="exampleFormControlInput1" class="form-label">Name</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="Uservalid.name" name="name"  placeholder="enter your name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required>
+      <small [class.d-none]="name.valid||name.untouched" class="text-danger">name is required*</small>
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+        <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="Uservalid.email" name="email" placeholder="enter your email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+        <div *ngIf="email.touched" class="text-danger">
+          <p *ngIf="email.errors?.required">Email is required field*</p>
+          <p *ngIf="email.errors?.pattern">This is not a valid Email!!!</p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleFormControlInput1" class="form-label">Designation</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="Uservalid.designation" name="designation" placeholder="enter your designation">
+      </div>
+
+      <div>
+        <button class="btn btn-primary me-md-2" type="submit">register</button>
+      </div>
+    
+    </div>
+    
+    <div class="col-6">
+      <div class="mb-4">
+       <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" [(ngModel)]="Uservalid.gender" name="gender" id="inlineRadio1" value="male">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" [(ngModel)]="Uservalid.gender" name="gender" id="inlineRadio2" value="female">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+      </div>
+    </div>
+    
+    <div class="mb-4">
+      <select class="form-select"  [(ngModel)]="Uservalid.course" name="course" aria-label="Default select example">
+        <option selected>select your course</option>
+        <option value="java">java</option>
+        <option value="Angular">Angular</option>
+        <option value="spring">spring</option>
+      </select>
+    </div>
+    
+    
+    <div class="mb-4">
+      <div class="form-check">
+        <input class="form-check-input" [(ngModel)]="Uservalid.remember" name="remember" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          remember me
+        </label>
+      </div>
+      
+    </div>
+    
+    
+    </div>
+    
+    
+    </div>
+
+</form>
+
+<div class="text-center fs-6">
+  {{registrationForm.value | json}}
+</div>
+
+{{Uservalid | json}}
+</div>
